@@ -54,8 +54,24 @@
       target: 'esnext',
       outDir: 'build',
     },
-    server: {
-      port: 3000,
-      open: true,
+  server: {
+    host: "127.0.0.1",
+    port: 5175,
+    strictPort: true,
+    open: true,
+    proxy: {
+      "/game": {
+        target: "http://127.0.0.1:5000",
+        changeOrigin: true,
+      },
+      "/scores": {
+        target: "http://127.0.0.1:5000",
+        changeOrigin: true,
+      },
+      "/dataset": {
+        target: "http://127.0.0.1:5000",
+        changeOrigin: true,
+      },
     },
-  });
+  },
+});
