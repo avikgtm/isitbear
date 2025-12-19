@@ -102,7 +102,7 @@ export function PlayPage({ onNavigate, playerName }: PlayPageProps) {
       
       <div className="flex flex-col items-center pt-[160px] pb-20 px-4">
         <h1 className="text-[40px] text-black text-center mb-12">
-          Is it bear?
+          Is it duck?
         </h1>
         
         <div className="bg-[#d9d9d9] w-[517px] h-[354px] max-w-full mb-8 flex items-center justify-center overflow-hidden">

@@ -1,7 +1,7 @@
 
-  # Is It Bear?
+  # Is It Duck?
 
-  This is a game where you guess if it is a bear! Have fun playing!
+  This is a game where you guess if it is a duck! Have fun playing!
 
   ## Running the code
 

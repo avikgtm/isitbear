@@ -1,4 +1,4 @@
-import imgBear from "figma:asset/c65c5ccaff861a990e5ffd66a937a49315842435.png";
+import imgDuck from "../assets/360_F_764845724_6zL7rCEhxk9olCJJpPGNf8hRWTFqfHGZ.jpg";
 import { Navigation } from "./Navigation";
 
 type HomePageProps = {
@@ -14,14 +14,14 @@ export function HomePage({ onNavigate, playerName, onPlayerNameChange }: HomePag
       
       <div className="flex flex-col items-center pt-[122px] pb-20 px-4">
         <h1 className="text-[80px] text-black text-center mb-6">
-          Is it bear?
+          Is it duck?
         </h1>
         
         <div className="relative w-[630px] h-[420px] max-w-full mb-12">
           <img 
-            alt="Bear example" 
+            alt="Duck example" 
             className="w-full h-full object-cover" 
-            src={imgBear} 
+            src={imgDuck} 
           />
           <div className="absolute right-[100px] top-1/2 -translate-y-1/2">
             <p 
@@ -46,7 +46,7 @@ export function HomePage({ onNavigate, playerName, onPlayerNameChange }: HomePag
               <span>Look at picture</span>
             </li>
             <li>
-              <span>Is it bear? Yes or no</span>
+              <span>Is it duck? Yes or no</span>
             </li>
           </ol>
         </div>
