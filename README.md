@@ -1,7 +1,7 @@
 
-  # Is It Bear? Game Frontend
+  # Is It Bear?
 
-  This is a code bundle for Is It Bear? Game Frontend. The original project is available at https://www.figma.com/design/Jja9VOOUA4HGg7lNdNKgs5/Is-It-Bear--Game-Frontend.
+  This is a game where you guess if it is a bear! Have fun playing!
 
   ## Running the code
 
