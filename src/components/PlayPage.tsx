@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigation } from "./Navigation";
+import cryingDuck from "../assets/crying-duck.png";
 
 type PlayPageProps = {
   onNavigate: (page: "home" | "leaderboard" | "play") => void;
@@ -105,8 +106,18 @@ export function PlayPage({ onNavigate, playerName }: PlayPageProps) {
           Is it duck?
         </h1>
         
-        <div className="bg-[#d9d9d9] w-[517px] h-[354px] max-w-full mb-8 flex items-center justify-center overflow-hidden">
-          {imageUrl ? (
+        {isFinished && (
+          <p className="text-[20px] text-black mb-6">Wrong!</p>
+        )}
+
+        <div className="bg-[#d9d9d9] w-[517px] h-[354px] max-w-full mb-6 flex items-center justify-center overflow-hidden">
+          {isFinished ? (
+            <img
+              alt="Crying duck"
+              className="w-full h-full object-contain"
+              src={cryingDuck}
+            />
+          ) : imageUrl ? (
             <img
               alt="Game prompt"
               className="w-full h-full object-cover"
@@ -118,6 +129,23 @@ export function PlayPage({ onNavigate, playerName }: PlayPageProps) {
             </p>
           )}
         </div>
+
+        {isFinished && (
+          <div className="mb-10 flex flex-col items-center gap-4">
+            <button
+              onClick={startGame}
+              className="bg-black text-white px-12 py-2 rounded-[10px] text-[18px]"
+            >
+              Try again
+            </button>
+            <button
+              onClick={() => onNavigate("leaderboard")}
+              className="border border-black px-6 py-2 rounded-[10px] text-[18px]"
+            >
+              Leaderboard
+            </button>
+          </div>
+        )}
         
         {/* Answer buttons */}
         <div className="flex gap-8 mb-12">
@@ -152,25 +180,6 @@ export function PlayPage({ onNavigate, playerName }: PlayPageProps) {
           <p className="text-[16px] text-red-600 mt-6">{error}</p>
         )}
 
-        {isFinished && (
-          <div className="mt-8 flex flex-col items-center gap-4">
-            <p className="text-[24px] text-black">Game over!</p>
-            <div className="flex gap-4">
-              <button
-                onClick={startGame}
-                className="bg-black text-white px-6 py-2 rounded-[10px] text-[18px]"
-              >
-                Play again
-              </button>
-              <button
-                onClick={() => onNavigate("leaderboard")}
-                className="border border-black px-6 py-2 rounded-[10px] text-[18px]"
-              >
-                Leaderboard
-              </button>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
